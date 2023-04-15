@@ -1,13 +1,13 @@
 import React from 'react'
 const ShowInvalidDays = ({ invalidDays, items }) => {
-    const invalidDaysArray = invalidDays.map(({ key }) => {
-        if (invalidDays.includes(key)) {
-            console.log('YES')
+    let invalidDaysArray = []
+    invalidDays.map(({ key }) => {
+        if (invalidDaysArray.includes(key)) {
+            let index = invalidDaysArray.indexOf(key)
+            invalidDaysArray.splice(index, 1)
         } else {
-            console.log('NO')
+            invalidDaysArray.push(key)
         }
-
-        return key
     })
     const invaliDays = invalidDaysArray.map((key) => {
         return items[key].label
