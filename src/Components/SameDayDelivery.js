@@ -1,6 +1,11 @@
 import React from 'react'
 import { UseGlobalContext } from '../Store/Context'
 import { Checkbox } from 'antd'
+import type { CheckboxChangeEvent } from 'antd/es/checkbox'
+
+const onChange = (e: CheckboxChangeEvent) => {
+    console.log(`checked = ${e.target.checked}`)
+}
 
 const SameDayDelivery = () => {
     const {
