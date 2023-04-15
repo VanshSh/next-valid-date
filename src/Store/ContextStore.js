@@ -4,7 +4,11 @@ const Context = createContext()
 
 export const ContextProvider = ({ children }) => {
     const [state, setState] = useState({
-        sameDayDelivery: 'VANSH',
+        sameDayDelivery: {
+            enable: false,
+            cutOffTime: '',
+        },
+        invalidDays: [],
     })
     return (
         <Context.Provider value={{ setState, state }}>
@@ -13,4 +17,7 @@ export const ContextProvider = ({ children }) => {
     )
 }
 
-export const UseGlobalContext = () => useContext(Context)
+function GlobalContextUse() {
+    return useContext(Context)
+}
+export default GlobalContextUse
