@@ -2,43 +2,15 @@ import React from 'react'
 import GlobalContextUse from '../../Store/ContextStore'
 import { Dropdown, Space, Typography } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
-import ShowInvalidDays from './ShowInvalidDays'
+import ShowInvalidDays from '../ShowInvalidArr'
 
-const items = [
-    {
-        key: '0',
-        label: 'Sunday',
-    },
-    {
-        key: '1',
-        label: 'Monday',
-    },
-    {
-        key: '2',
-        label: 'Tuseday',
-    },
-    {
-        key: '3',
-        label: 'Wednesday',
-    },
-    {
-        key: '4',
-        label: 'Thursday',
-    },
-    {
-        key: '5',
-        label: 'Friday',
-    },
-    {
-        key: '6',
-        label: 'Saturday',
-    },
-]
-const InvalidDays = () => {
+const InvalidDays = ({ items_data }) => {
+    const items = items_data
     const {
-        state: { invalidDays },
         setState,
+        state: { invalidDays },
     } = GlobalContextUse()
+
     const onSelectHandler = (e) => {
         setState((prevState) => {
             return {

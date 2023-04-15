@@ -9,6 +9,7 @@ export const ContextProvider = ({ children }) => {
             cutOffTime: '',
         },
         invalidDays: [],
+        invalidMonths: [],
     })
     return (
         <Context.Provider value={{ setState, state }}>
